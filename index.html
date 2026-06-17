@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CS Learning Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">CS</span>
+          <div>
+            <strong>CS Learning Hub</strong>
+            <span>Student workspace</span>
+          </div>
+        </div>
+        <nav>
+          <a href="#dashboard" class="active">Dashboard</a>
+          <a href="#lessons">Lessons</a>
+          <a href="#quiz">Quiz</a>
+          <a href="#challenges">Challenges</a>
+          <a href="#progress">Progress</a>
+        </nav>
+      </aside>
+
+      <main>
+        <section id="dashboard" class="topbar">
+          <div>
+            <p class="eyebrow">Best overall project</p>
+            <h1>Learn, practice, and track computer science skills.</h1>
+          </div>
+          <button id="resetProgress" class="ghost-button" type="button">Reset progress</button>
+        </section>
+
+        <section class="overview-grid" aria-label="Learning overview">
+          <article class="metric">
+            <span>Lessons completed</span>
+            <strong id="lessonMetric">0/6</strong>
+          </article>
+          <article class="metric">
+            <span>Quiz score</span>
+            <strong id="quizMetric">0%</strong>
+          </article>
+          <article class="metric">
+            <span>Challenges solved</span>
+            <strong id="challengeMetric">0/4</strong>
+          </article>
+          <article class="metric">
+            <span>Current streak</span>
+            <strong id="streakMetric">0 days</strong>
+          </article>
+        </section>
+
+        <section class="workspace">
+          <div class="learning-pane">
+            <section id="lessons" class="panel">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">Lessons</p>
+                  <h2>Programming concepts</h2>
+                </div>
+                <select id="trackFilter" aria-label="Filter lessons">
+                  <option value="all">All tracks</option>
+                  <option value="Foundations">Foundations</option>
+                  <option value="Algorithms">Algorithms</option>
+                  <option value="AI">AI</option>
+                </select>
+              </div>
+              <div id="lessonList" class="lesson-list"></div>
+            </section>
+
+            <section id="quiz" class="panel">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">Quiz</p>
+                  <h2>Quick knowledge check</h2>
+                </div>
+                <span id="questionCount" class="pill">Question 1 of 4</span>
+              </div>
+              <div class="quiz-box">
+                <p id="quizQuestion"></p>
+                <div id="quizAnswers" class="answer-grid"></div>
+                <div class="quiz-actions">
+                  <span id="quizFeedback" aria-live="polite"></span>
+                  <button id="nextQuestion" type="button">Next question</button>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <aside class="visual-pane" aria-label="Interactive algorithm visualizer">
+            <section class="panel visualizer">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">Visualizer</p>
+                  <h2>Sorting playground</h2>
+                </div>
+                <button id="shuffleBars" type="button">Shuffle</button>
+              </div>
+              <canvas id="sortCanvas" width="760" height="420" aria-label="Animated bar chart showing sorting steps"></canvas>
+              <div class="controls">
+                <button id="stepSort" type="button">Step</button>
+                <button id="autoSort" type="button">Auto sort</button>
+              </div>
+            </section>
+          </aside>
+        </section>
+
+        <section id="challenges" class="panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Challenges</p>
+              <h2>Coding practice</h2>
+            </div>
+            <span class="pill">JavaScript friendly</span>
+          </div>
+          <div id="challengeList" class="challenge-grid"></div>
+        </section>
+
+        <section id="progress" class="panel progress-panel">
+          <div>
+            <p class="eyebrow">Progress</p>
+            <h2>Your learning map</h2>
+          </div>
+          <div class="progress-track" aria-label="Overall course progress">
+            <div id="overallProgress"></div>
+          </div>
+          <p id="progressSummary"></p>
+        </section>
+
+        <footer class="site-footer">
+          Created by Haroon Hammad
+        </footer>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
