@@ -119,6 +119,38 @@
           <div id="challengeList" class="challenge-grid"></div>
         </section>
 
+        <section class="panel code-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Code workspace</p>
+              <h2>Try a solution</h2>
+            </div>
+            <select id="challengeSelect" aria-label="Choose a coding challenge"></select>
+          </div>
+          <div class="editor-layout">
+            <div>
+              <p id="challengePrompt" class="workspace-prompt"></p>
+              <textarea id="codeEditor" spellcheck="false" aria-label="Code editor"></textarea>
+              <div class="editor-actions">
+                <button id="runCode" type="button">Run check</button>
+                <button id="saveCode" class="ghost-button" type="button">Save code</button>
+              </div>
+            </div>
+            <div class="output-box" aria-live="polite">
+              <strong>Output</strong>
+              <pre id="codeOutput">Choose a challenge and run your code.</pre>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel badge-panel">
+          <div>
+            <p class="eyebrow">Achievements</p>
+            <h2>Badges earned</h2>
+          </div>
+          <div id="badgeList" class="badge-grid"></div>
+        </section>
+
         <section id="progress" class="panel progress-panel">
           <div>
             <p class="eyebrow">Progress</p>
@@ -128,6 +160,13 @@
             <div id="overallProgress"></div>
           </div>
           <p id="progressSummary"></p>
+        </section>
+
+        <section id="certificate" class="certificate">
+          <p class="eyebrow">Certificate</p>
+          <h2>CS Learning Hub Completion</h2>
+          <p>This certifies that <strong>Haroon Hammad</strong> completed the learning path.</p>
+          <span id="certificateStatus">Finish all lessons, quizzes, and challenges to unlock.</span>
         </section>
 
         <footer class="site-footer">

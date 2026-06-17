@@ -347,8 +347,145 @@ h2 {
   background: var(--blue);
 }
 
+.code-panel,
+.badge-panel {
+  margin-top: 18px;
+}
+
+.editor-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.workspace-prompt {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+textarea {
+  width: 100%;
+  min-height: 250px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #10231f;
+  color: #f5fbf8;
+  font: 0.95rem/1.5 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  padding: 14px;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.output-box {
+  min-height: 250px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdfb;
+  padding: 14px;
+}
+
+.output-box strong {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.output-box pre {
+  white-space: pre-wrap;
+  margin: 0;
+  color: var(--muted);
+  font: 0.92rem/1.45 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.badge {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f6f8f6;
+  padding: 14px;
+  opacity: 0.55;
+}
+
+.badge.earned {
+  border-color: rgba(35, 116, 91, 0.35);
+  background: #eef7f3;
+  opacity: 1;
+}
+
+.badge-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: var(--gold);
+  color: #13231e;
+  font-weight: 950;
+  margin-bottom: 10px;
+}
+
+.badge h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.badge p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
 .progress-panel {
   margin-top: 18px;
+}
+
+.certificate {
+  margin-top: 18px;
+  border: 2px solid rgba(209, 154, 42, 0.72);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(240, 196, 91, 0.22), rgba(255, 255, 255, 0.9)),
+    #fff;
+  box-shadow: var(--shadow);
+  padding: 24px;
+  text-align: center;
+}
+
+.certificate.locked {
+  filter: grayscale(0.45);
+  opacity: 0.7;
+}
+
+.certificate h2 {
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+}
+
+.certificate p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+#certificateStatus {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  border-radius: 999px;
+  background: #13231e;
+  color: #fff;
+  font-weight: 850;
+  padding: 0 14px;
 }
 
 .site-footer {
@@ -395,7 +532,9 @@ h2 {
 
   .overview-grid,
   .workspace,
-  .challenge-grid {
+  .challenge-grid,
+  .editor-layout,
+  .badge-grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -422,13 +561,19 @@ h2 {
   nav,
   .overview-grid,
   .workspace,
-  .challenge-grid {
+  .challenge-grid,
+  .editor-layout,
+  .badge-grid {
     grid-template-columns: 1fr;
   }
 
   .lesson-card,
   .challenge-card {
     display: flex;
+  }
+
+  .editor-actions {
+    flex-direction: column;
   }
 
   button,
